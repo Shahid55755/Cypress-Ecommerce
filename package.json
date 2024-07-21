@@ -4,14 +4,15 @@
   "description": "my learning cypress",
   "main": "index.js",
   "scripts": {
-    "test": "no test specified"
+    "test": "node_modules\\.bin\\cypress run --config pageLoadTimeout=100000",
+    "runtest": "npm run test --"
   },
   "author": "shahid",
   "license": "ISC",
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^6.0.2",
     "@faker-js/faker": "^8.4.1",
-    "cypress": "^13.13.0",
+    "cypress": "^13.13.1",
     "cypress-xpath": "^2.0.1",
     "faker": "^6.6.6",
     "mochawesome": "^7.1.3",
