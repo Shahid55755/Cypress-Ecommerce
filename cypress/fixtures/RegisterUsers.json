@@ -1,0 +1,23 @@
+{
+  "account": {
+    "password": "James@123",
+    "firstname": "shahid",
+    "lastname": "ali",
+    "day": "10",
+    "month": "3",
+    "year": "2000",
+    "company": "max",
+    "address1": "swabi",
+    "address2": "lahore",
+    "country": "Canada",
+    "state": "Taxas",
+    "city": "Lahore",
+    "zipcode": "5255555",
+    "mobile": "9888888555"
+  },
+
+  "signup": {
+    "username": "haliqaaa",
+    "email": "zebbbbb@t.com"
+  }
+}

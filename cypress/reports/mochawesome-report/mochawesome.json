@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-07-20T17:31:18.165Z",
+    "end": "2024-07-20T17:31:19.633Z",
+    "duration": 1468,
+    "testsRegistered": 3,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "62d26d54-6420-4dc8-b393-ac2150881a57",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Verify_RegisterUser.cy.js",
+      "file": "cypress\\e2e\\Verify_RegisterUser.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cbedff32-90f0-44d8-8b94-8488f69f229a",
+          "title": "Verify the functionality of Register User",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "First name should not accept numbers/Digits",
+              "fullTitle": "Verify the functionality of Register User First name should not accept numbers/Digits",
+              "timedOut": null,
+              "duration": 1310,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "user.enterfirst_name(\"Shahid77779\");\ncy.get(\"#first_name\").should(\"be.visible\").and(\"contain\", \"Not accepting Digits in Last Name field\");",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://www.automationexercise.com/signup\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: getaddrinfo ENOTFOUND www.automationexercise.com\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Verify the functionality of...`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://www.automationexercise.com/signup\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: getaddrinfo ENOTFOUND www.automationexercise.com\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Verify the functionality of...`\n    at <unknown> (http://localhost:58499/__cypress/runner/cypress_runner.js:131507:74)\n    at visitFailedByErr (http://localhost:58499/__cypress/runner/cypress_runner.js:130906:12)\n    at <unknown> (http://localhost:58499/__cypress/runner/cypress_runner.js:131506:11)\n    at tryCatcher (http://localhost:58499/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:58499/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:58499/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:58499/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:58499/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:58499/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:58499/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:58499/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:58499/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://learning/./cypress/e2e/Verify_RegisterUser.cy.js:9:7)\n\nFrom Node.js Internals:\n  Error: getaddrinfo ENOTFOUND www.automationexercise.com\n      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:108:26)",
+                "diff": null
+              },
+              "uuid": "f49d8b49-56d7-4ee1-93eb-9fa5ceffbd1e",
+              "parentUUID": "cbedff32-90f0-44d8-8b94-8488f69f229a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Last name should not accept numbers/Digits",
+              "fullTitle": "Verify the functionality of Register User Last name should not accept numbers/Digits",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "user.enterlast_name(\"Shahid77779\");\ncy.get(\"#last_name\").should(\"be.visible\").and(\"contain\", \"Not accepting Digits in Last Name field\");",
+              "err": {},
+              "uuid": "849414d1-e43c-4179-be88-ea236dffd504",
+              "parentUUID": "cbedff32-90f0-44d8-8b94-8488f69f229a",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "password length should not be less than 8 character, Should be combination of character/Digits/Special characters",
+              "fullTitle": "Verify the functionality of Register User password length should not be less than 8 character, Should be combination of character/Digits/Special characters",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "user.enterpassword(\"123434\");\ncy.get(\"#password\").invoke(\"prop\", \"validationMessage\").should(\"equal\", \"Please enter a password at least 8 characters long and include a combination of letters, digits, and special characters.\");",
+              "err": {},
+              "uuid": "d9c67cdd-4d11-4990-9730-33d7a87b47e9",
+              "parentUUID": "cbedff32-90f0-44d8-8b94-8488f69f229a",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f49d8b49-56d7-4ee1-93eb-9fa5ceffbd1e"
+          ],
+          "pending": [],
+          "skipped": [
+            "849414d1-e43c-4179-be88-ea236dffd504",
+            "d9c67cdd-4d11-4990-9730-33d7a87b47e9"
+          ],
+          "duration": 1310,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
