@@ -33,4 +33,21 @@ Cypress.Commands.add("login", (username, email) => {
   RegisterP.SignUp();
 });
 
+Cypress.Commands.add("GrandTotal", () => {
+  let Gtotal = 0;
+  cy.get("a[href='/view_cart']").parent("li").click();
+  cy.get("table tbody tr").each(($row, index, $rows) => {
+    cy.wrap($row).within(() => {
+      cy.get("td")
+        .eq(4)
+        .invoke("text")
+        .then((totalTxt) => {
+          const total = parseFloat(totalTxt.replace("Rs.", "").trim());
+          Gtotal += total;
+          cy.log(Gtotal);
+        });
+    });
+  });
+});
+
 import "cypress-xpath";
