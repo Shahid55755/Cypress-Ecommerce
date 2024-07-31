@@ -1,0 +1,186 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 4,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-07-27T17:19:51.191Z",
+    "end": "2024-07-27T17:21:43.333Z",
+    "duration": 112142,
+    "testsRegistered": 5,
+    "passPercent": 80,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "26dd6336-d8c0-4dd2-951f-094d11e54d65",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Verify_Login.cy.js",
+      "file": "cypress\\e2e\\Verify_Login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "43dcece6-ec73-4f02-aae3-16fb91e5c40c",
+          "title": "Verify the functionality of Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login with valid credentials",
+              "fullTitle": "Verify the functionality of Login Login with valid credentials",
+              "timedOut": null,
+              "duration": 69223,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"Login\").then(user => {\n  lnp.enterEmail(user.valid.email);\n  lnp.enterPassword(user.valid.password);\n  lnp.pressLoginButton();\n  cy.get(\"li a b\").as(\"username\").should(\"be.visible\").invoke(\"text\").then(value => {\n    cy.get(\"@username\").should(\"contain\", `${value}`);\n  });\n  cy.get('a[href=\"/logout\"]').as(\"logout\").should(\"be.visible\");\n  cy.get(\"@logout\").invoke(\"text\").then(txt => {\n    expect(txt.trim()).to.equal(\"Logout\");\n  });\n});",
+              "err": {
+                "message": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.",
+                "estack": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n    at timedOutWaitingForPageLoad (https://www.automationexercise.com/__cypress/runner/cypress_runner.js:130948:64)\n    at <unknown> (https://www.automationexercise.com/__cypress/runner/cypress_runner.js:131264:16)\n    at tryCatcher (https://www.automationexercise.com/__cypress/runner/cypress_runner.js:1807:23)\n    at <unknown> (https://www.automationexercise.com/__cypress/runner/cypress_runner.js:4186:41)\n    at tryCatcher (https://www.automationexercise.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://www.automationexercise.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://www.automationexercise.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://www.automationexercise.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://www.automationexercise.com/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://www.automationexercise.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://www.automationexercise.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://www.automationexercise.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://www.automationexercise.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://learning/./cypress/e2e/Verify_Login.cy.js:16:9)",
+                "diff": null
+              },
+              "uuid": "53ef0860-39d1-41f9-9a31-47ddebb862d4",
+              "parentUUID": "43dcece6-ec73-4f02-aae3-16fb91e5c40c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with Invalid Email and Valid Password",
+              "fullTitle": "Verify the functionality of Login Login with Invalid Email and Valid Password",
+              "timedOut": null,
+              "duration": 4784,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"Login\").then(user => {\n  lnp.enterEmail(user.invalid.email);\n  lnp.enterPassword(user.valid.password);\n  lnp.pressLoginButton();\n  cy.get('input[data-qa=\"login-email\"]').as(\"loginEmail\");\n  cy.get(\"@loginEmail\").invoke(\"prop\", \"validationMessage\").then(validationMessage => {\n    expect(validationMessage).include(\"Please include an '@' in the email address\");\n  });\n});",
+              "err": {},
+              "uuid": "4019ccaa-b3bb-492d-82e3-e33ec44ba721",
+              "parentUUID": "43dcece6-ec73-4f02-aae3-16fb91e5c40c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with Valid Email and Invalid Password",
+              "fullTitle": "Verify the functionality of Login Login with Valid Email and Invalid Password",
+              "timedOut": null,
+              "duration": 5226,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"Login\").then(user => {\n  lnp.enterEmail(user.valid.email);\n  lnp.enterPassword(user.invalid.password);\n  lnp.pressLoginButton();\n  cy.get(\"form p\").as(\"error\").invoke(\"text\").then(txt => {\n    expect(txt.trim()).to.include(\"Your email or password is incorrect!\");\n  });\n  cy.get(\"@error\").should(\"contain\", \"Your email or password is incorrect!\");\n});",
+              "err": {},
+              "uuid": "8a0a27b8-e6fa-4414-a38e-112d07b78a5a",
+              "parentUUID": "43dcece6-ec73-4f02-aae3-16fb91e5c40c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with Empty username & password",
+              "fullTitle": "Verify the functionality of Login Login with Empty username & password",
+              "timedOut": null,
+              "duration": 1369,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"Login\").then(user => {\n  lnp.pressLoginButton();\n  cy.get('input[data-qa=\"login-email\"]').as(\"loginEmail\");\n  cy.get(\"@loginEmail\").invoke(\"prop\", \"validationMessage\").then(validation => {\n    expect(validation).to.eq(\"Please fill out this field.\");\n  });\n  // for password\n  cy.get('input[data-qa=\"login-password\"]').as(\"loginpassword\");\n  cy.get(\"@loginpassword\").invoke(\"prop\", \"validationMessage\").then(validation => {\n    expect(validation).to.eq(\"Please fill out this field.\");\n  });\n});",
+              "err": {},
+              "uuid": "55675327-a95e-466b-8533-a26fdedbeb6b",
+              "parentUUID": "43dcece6-ec73-4f02-aae3-16fb91e5c40c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should login with multiple user",
+              "fullTitle": "Verify the functionality of Login Should login with multiple user",
+              "timedOut": null,
+              "duration": 24230,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Cypress._.each(users, user => {\n  lnp.enterEmail(user.email);\n  lnp.enterPassword(user.password);\n  lnp.pressLoginButton();\n  cy.get('a[href=\"/logout\"]').as(\"logout\").invoke(\"text\").then(text => {\n    cy.get(\"@logout\").should(\"be.visible\");\n    expect(\"Logout\").to.eq(text.trim());\n  });\n  cy.get(\"@logout\").click();\n});",
+              "err": {},
+              "uuid": "03e3bb84-786f-4e24-a271-bcaaec4d1130",
+              "parentUUID": "43dcece6-ec73-4f02-aae3-16fb91e5c40c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4019ccaa-b3bb-492d-82e3-e33ec44ba721",
+            "8a0a27b8-e6fa-4414-a38e-112d07b78a5a",
+            "55675327-a95e-466b-8533-a26fdedbeb6b",
+            "03e3bb84-786f-4e24-a271-bcaaec4d1130"
+          ],
+          "failures": [
+            "53ef0860-39d1-41f9-9a31-47ddebb862d4"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 104832,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
