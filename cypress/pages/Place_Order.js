@@ -34,7 +34,8 @@ class PlaceOrderClass {
     cy.get("@mm").type("2024");
     cy.get("@mm").should("have.attr", "type", "text");
     cy.get("@mm").should("have.prop", "required", true);
-
+  }
+  submit_Order() {
     cy.get('button[type="submit"][data-qa="pay-button"').as("confirmOrder");
     cy.get("@confirmOrder").should("have.attr", "type", "submit").click();
   }
