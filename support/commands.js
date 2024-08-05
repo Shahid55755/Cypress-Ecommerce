@@ -1,6 +1,8 @@
 // ***********************************************
 import RegisterPageClass from "../pages/RegisterPage";
 import { faker } from "@faker-js/faker";
+import "cypress-file-upload";
+
 // This example commands.js shows you how to
 // create various custom commands and overwrite
 // existing commands.
